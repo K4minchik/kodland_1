@@ -53,17 +53,17 @@ async def on_message(message):
         if msg.find(item) >= 0:
             find_hello_words = True
     if find_hello_words and find_bad_words == False:
-        await message.channel.send(f"Хаай! Чего хочешь человек? {gen_emoji}")
+        await message.channel.send(f"Хаай! Чего хочешь человек? {gen_emoji()}")
 
     find_bye_words = False
     for item in bye_words:
         if msg.find(item) >= 0:
             find_bye_words = True
     if find_bye_words and find_bad_words == False:
-        await message.channel.send(f"Было приятно пообщаться! Байииии! {gen_emoji}")
+        await message.channel.send(f"Было приятно пообщаться! Байииии! {gen_emoji()}")
 
     if "как дела" in message.content.lower() and find_bad_words == False:
-        await message.channel.send(f"Отлично! Сижу, пью яблочную кровь. {gen_emoji}")
+        await message.channel.send(f"Отлично! Сижу, пью яблочную кровь. {gen_emoji()}")
 
 @bot.event
 async def on_member_join(member):
